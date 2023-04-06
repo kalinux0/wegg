@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to Weg</title>
+        <title>{% block title %}{% endblock %}</title>
         <meta name="description" content="Website for weg.">
         <meta name="og:image" content="/img/person.jpg">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
@@ -17,10 +17,13 @@
         <script src="/js/general/header.js"></script>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        {% endblock %}    
+        {{ include('table/css.html.twig') }}
     </head>
     <body>
         {% block body %}{% endblock %}
+        
+        {{ include('table/js.html.twig') }}
         <script src="/js/general/footer.js"></script>
     </body>
 </html>

@@ -1,0 +1,99 @@
+{% extends 'table/base.html.twig' %}
+
+{% block title %}Hello!
+{% endblock %}
+
+{% block body %}
+	<div class="page open" id="page_0">
+		<div class="table-menu">
+			<div class="table-inner">
+				<div class="table-header">
+					<div class="table-filters" id="table_filters" data-filters="table_show,table_search">
+						{{ include('table/search.html.twig') }}
+						{{ include('table/limit.html.twig') }}
+					</div>
+				</div>
+				<div class="table-content">
+					<div class="kalenux-tables" data-order='{"6":0}' data-nav="true" data-header="Resim,Ad,Soyad,Görev,Oy Sayısı,İşlemler" data-type="user" data-url="api/users" data-id="user"></div>
+				</div>
+				<kalenux-template id="user">
+					<item class="kt-cell">
+						<ul class="kt-cell-inner">
+							<li class="kt-item">+image.parseMedia+</li>
+							<li class="kt-item">+name+</li>
+							<li class="kt-item">+surname+</li>
+							<li class="kt-item">+title+</li>
+							<li class="kt-item">+vote+</li>
+							<li class="kt-item">+id.getActions+</li>
+						</ul>
+					</item>
+				</kalenux-template>
+			</div>
+		</div>
+	</div>
+    <div class="page" id="page_1">
+		<div class="page-part page-left">
+			<img class="image" id="image" />
+			<div class="fullname" id="full_name"></div> 
+			<div class="title" id="title"></div>
+			<div class="socials">
+				<a href="#" class="facebook"><img src="/img/facebook.jpg"></a>
+				<a href="#" class="twitter"><img src="/img/twitter.jpg"></a>
+				<a href="#" class="instagram"><img src="/img/instagram.jpg"></a>
+			</div>
+		</div>
+		<div class="page-part page-right">
+			<div class="page-sub-part">
+				<div>Genel Bilgiler</div>
+				<div class="page-min-parts">
+					<div class="page-min-part">
+						<div class="page-min-part-header">E-posta</div>
+						<div class="page-min-part-content" id="email"></div>
+					</div>
+					<div class="page-min-part">
+						<div class="page-min-part-header">Telefon</div>
+						<div class="page-min-part-content" id="phone"></div>
+					</div>
+					<div class="page-min-part">
+						<div class="page-min-part-header">Adres</div>
+						<div class="page-min-part-content" id="address"></div>
+					</div>
+				</div>
+			</div>
+			<div class="page-sub-part">
+				<div>Kişisel Bilgiler</div>
+				<div class="page-min-parts">
+					<div class="page-min-part">
+						<div class="page-min-part-header">Müsait Günler</div>
+						<div class="page-min-part-content" id="days_available"></div>
+					</div>
+					<div class="page-min-part">
+						<div class="page-min-part-header">Cinsiyet</div>
+						<div class="page-min-part-content" id="gender"></div>
+					</div>
+					<div class="page-min-part">
+						<div class="page-min-part-header">Doğum Tarihi</div>
+						<div class="page-min-part-content" id="birth_date"></div>
+					</div>
+				</div>
+			</div>
+			<div class="page-sub-part">
+				<div>Oy Bilgileri</div>
+				<div class="page-min-parts">
+					<div class="page-min-part">
+						<div class="page-min-part-header">Oy Sayısı</div>
+						<div class="page-min-part-content" id="vote_count"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<script src="/plugins/jquery/jquery.min.js"></script>
+	<script src="/plugins/airdatepicker/js/datepicker.min.js"></script>
+	<script src="/plugins/airdatepicker/js/datepicker.tr.js"></script>
+	<script src="/js/lib/kalenux/templater.js" defer></script>
+	<script src="/js/lib/kalenux/kalenux_table.js" defer></script>
+	<script src="/js/lib/kalenux/select.js"></script>
+	<script src="/js/lib/kalenux/image.js"></script>
+	<script src="/js/index.js"></script>
+{% endblock %}
